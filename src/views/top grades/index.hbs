@@ -1,0 +1,67 @@
+<!-- component -->
+<div id="tg" class="h-50 flex m-2 sm:m-10">
+    <div class="container mx-auto bg-blue-500 rounded-lg p-10 text-center">
+       <form action="/topGrades/search" method="POST">
+            <h1 class="font-bold text-white text-4xl">¿Estás entre los Top Grades?</h1>
+            <p class="mx-auto font-normal text-2xl my-6 max-w-lg">Ingresa tus credenciales y descúbrelo. ¿Estás listo/a? <span class="emoji smile" role="img" aria-label="monkey"></span></p>
+            <div class="sm:flex items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
+                
+                    <select name="grado"
+                        class="text-base text-gray-800 outline-none border-2 px-4 py-2 rounded-lg w-screen">
+                        <option value='' disabled selected required hidden>Grado</option>
+                        <option value="3ro">3ro</option>
+                        <option value="4to">4to</option>
+                        <option value="5to">5to</option>
+                        <option value="6to">6to</option>
+                    </select>
+
+                    <select name="asignatura"
+                        class="text-base text-gray-800 outline-none border-2 px-4 py-2 rounded-lg w-screen">
+                        <option value="" disabled selected required hidden>Asignatura</option>
+                        <option value="Lenguaje">Lengua Española</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="Sociales">Sociales</option>
+                        <option value="Naturales">Naturales</option>
+                    </select>
+                    <button type="submit"
+                        class="bg-green-500 text-white text-base rounded-lg px-4 py-2 font-bold">Buscar</button>
+                
+                </div>
+            </form>
+
+            <section class="text-center">
+                <div class="container mx-auto py-10 flex justify-center">
+                    <div class="w-full pl-4  h-full flex flex-col">
+                        <div class="bg-white text-2x4  text-gray-500 font-bold px-5 py-2 shadow border-b border-gray-300">
+                            Mejores Calificaciones
+                        </div>
+
+                        <div class="w-full shadow bg-white" style="height:200px;" id="journal-scroll">
+
+                            <table class="w-full">
+
+                                <tbody class="">
+                                    <tr class="
+                                        text-2x4 py-1 border-b-2 border-blue-100 cursor-default
+
+                                bg-blue-500 bg-opacity-25 text-gray-700 text-bold">
+                                        <th>Estudiantes</th>
+                                        <th>Asignaturas</th>
+                                        <th>Calificaciones 95-100</th>
+                                    </tr>
+                                    {{#each data}}
+                                    <tr class="text-2x4 py-1 border-b-2 border-blue-100 cursor-default text-center
+                                text-gray-700 text-bold">
+                                        <td>{{nombre_est}}</td>
+                                        <td>{{asignatura}}</td>
+                                        <td>{{calificacion}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+</div>

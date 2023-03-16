@@ -1,0 +1,116 @@
+
+<section class="h-screen">
+<!-- component Search-->
+<div class="p-1 sm:p-10">
+  <form action="/grades/search" method="post" class="my-6">
+  <div class="container mx-auto flex justify-center items-center p-0 sm:p-2 md:p-0">
+    <div class="p-0 sm:p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
+      <div id="form_S_T" class="">
+        <div class="grid grid-cols-4 gap-4 border border-gray-200 p-2 rounded">
+          <div class="flex rounded bg-gray-300 items-center p-2">
+            <svg class="fill-current text-gray-800 mr-2 h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              class="bi bi-bookmark">
+              <path
+                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" fill="#000000"></path>
+            </svg>
+            <select name="filterGrade" class="bg-gray-300 w-full focus:outline-none text-gray-700" required>
+              <option value='' disabled selected hidden >Grado</option>
+              <option value="3ro">3ro</option>
+              <option value="4to">4to</option>
+              <option value="5to">5to</option>
+              <option value="6to">6to</option>
+            </select>
+          </div>
+          <div class="flex rounded bg-gray-300 items-center p-2">
+            <svg class="fill-current text-gray-800 mr-2 h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              class="bi bi-bookmark">
+              <path
+                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" fill="#000000"></path>
+            </svg>
+            <select name="filterArea" class="bg-gray-300 w-full focus:outline-none text-gray-700" required>
+              <option value="" disabled selected hidden >Área/Sección</option>
+              <optgroup label="Sección">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+              </optgroup>
+              <optgroup label="Área">
+                <option value="Informática">Informática</option>
+                <option value="Enfermería">Enfermería</option>
+                <option value="Mercadeo">Mercadeo</option>
+                <option value="Gestión">Gestión</option>
+                <option value="Mueble">Mueble</option>
+                <option value="Moda">Moda</option>
+              </optgroup>
+
+            </select>
+          </div>
+          <div class="flex rounded bg-gray-300 items-center p-2">
+             <svg
+              class="fill-current text-gray-800 mr-2 h-7 w-7"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="bi bi-cursor-text"
+            >
+              <path
+                d="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.174.099.321.198.44.286.119-.088.266-.187.44-.286A4.165 4.165 0 0 1 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.49 3.49 0 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.294.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.165 4.165 0 0 1-2.06-.566A4.561 4.561 0 0 1 8 13.65a4.561 4.561 0 0 1-.44.285 4.165 4.165 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.434.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.49 3.49 0 0 0-.436-.294A3.166 3.166 0 0 0 5.5 2.5.5.5 0 0 1 5 2zm3.352 1.355zm-.704 9.29z"
+                id="mainIconPathAttribute"
+                fill="#000000"
+                stroke-width="0"
+                stroke="#ff0000"
+              ></path>
+
+            </svg>
+            <input
+              type="text"
+              placeholder="Matrícula"
+              class="bg-gray-300 max-w-full focus:outline-none text-gray-700"
+              name="matricula"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="">
+            <button class="p-2 border w-full rounded-md bg-gray-800 text-white"
+              type="submit">Buscar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
+</div>
+
+<div class="max-w-3xl mx-auto px-2 sm:px-6 lg:px-8">
+  <div class="text-center">
+      {{#if nombre}}
+        <p class="text-2xl sm:text-3xl">TopGrades saluda a <b>{{nombre}}</b> <span class="emoji wave" role="img" aria-label="hand wave"></span><span class="emoji monkey" role="img" aria-label="monkey"></span><p/>
+      {{/if}}
+      </div>
+  <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-12">
+
+    <table class="table-fixed w-full text-gray-800">
+      <thead>
+        <tr class="bg-blue-500 text-white text-xs ms:text-base md:text-base">
+          <th class="w-1/4 py-4 text-center ...">Asignatura</th>
+          <th class="w-28 py-4 text-center ...">Calificación</th>
+          <th class="w-28 py-4 text-center ...">Período</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each grades}}
+          <tr class="text-xs ms:text-base md:text-base">
+            <td class="p-3 text-center">{{asignatura}}</td>
+            <td class="p-3 text-center">{{calificacion}}</td>
+            <td class="p-3 text-center">{{periodo}}</td>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>

@@ -1,0 +1,144 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://flowbite.com/docs/images/logo.svg" type="image/x-icon" />
+
+    <title>Top Grade</title>
+
+    <!-- Tailwind CSS Link -->
+    {{!
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css"> }}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontawesome Link -->
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet" />
+    <style>
+        /* #tg{
+            overflow:hidden;
+            Hide scrollbars 
+        }*/
+        #journal-scroll {
+            overflow: auto;
+        }
+
+        #journal-scroll::-webkit-scrollbar {
+            width: 8px;
+            cursor: pointer;
+            /*background-color: rgba(229, 231, 235, var(--bg-opacity));*/
+
+        }
+
+        #journal-scroll::-webkit-scrollbar-track {
+            background-color: rgba(229, 231, 235, var(--bg-opacity));
+            cursor: pointer;
+            /*background: red;*/
+        }
+
+        #journal-scroll::-webkit-scrollbar-thumb {
+            cursor: pointer;
+            background-color: #a0aec0;
+            /*outline: 1px solid slategrey;*/
+        }
+
+        .emoji {
+            font-size: 40px;
+            min-width: 1.4em;
+            text-align: center;
+        }
+
+        .emoji::after {
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .smile {
+            font-size: 30px;
+        }
+
+        .monkey::after {
+            content: '🙈';
+            --emoji-1: '🙉';
+            --emoji-2: '🙊';
+            animation-name: threeFrames;
+            animation-duration: 2s;
+        }
+
+        .wave::after {
+            content: '✋';
+            --emoji: '👋';
+            animation-name: twoFrames;
+            animation-duration: 1s;
+        }
+
+        .smile::after {
+            content: '😄';
+            --emoji: '😁';
+            animation-name: twoFrames;
+            animation-duration: 1s;
+        }
+
+        @keyframes twoFrames {
+            50% {
+                content:
+                    var(--emoji);
+            }
+        }
+
+        @keyframes threeFrames {
+            33.333% {
+                content:
+                    var(--emoji-1);
+            }
+
+            66.666% {
+                content: var(--emoji-2);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-600 text-white">
+
+    <nav class="bg-blue-500 text-white">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
+            <a href="/" class="flex items-center">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Top Grades - Vista
+                    Estudiante</span>
+            </a>
+            <div class="flex items-center">
+                {{! !PONER ALGO }}
+            </div>
+        </div>
+    </nav>
+    {{! <nav class="bg-gray-700">
+        <div class="max-w-screen-xl px-4 py-3 mx-auto md:px-6">
+            <div class="flex items-center">
+                <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+                    <li>
+                        <a href="/viewGrades" class=" text-white hover:bg-blue-500 py-2 px-4 rounded-md"
+                            aria-current="page">Ver Top Grades</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-900 dark:text-white hover:underline">Ver</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-900 dark:text-white hover:underline">Team</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-900 dark:text-white hover:underline">Features</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> }}
+
+    <!-- Document body -->
+
+    {{{body}}}
+
+    <script src="https://kit.fontawesome.com/3b96938cb0.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
